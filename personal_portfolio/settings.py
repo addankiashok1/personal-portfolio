@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fs*2=6j5di+x#2#3)vnz-7(ifa__!j^9q*)i42dz9)5crav^84'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangoashok.pythonanywhere.com']
 
 
 # Application definition
@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'personal_portfolio',
-		'USER': 'postgres',
-		'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT' : ''
+		'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -124,8 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 # import os
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-# STATIC_ROOT = BASE_DIR / BASE_DIR / 'static'
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
